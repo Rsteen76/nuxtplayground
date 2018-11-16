@@ -10,7 +10,7 @@
       name="custom-classes-transition" 
       enter-active-class="animated fadeInLeft" 
       leave-active-class="animated fadeOutLeft">
-      <div @click="show=!show, showButtons=!showButtons" v-if="showButtons"  class="about-one custom-button">About</div>
+      <div @click="show=!show, showButtons=!showButtons" v-if="showButtons"  class="about-button custom-button">About</div>
     </transition>
     <transition 
       name="custom-classes-transition" 
@@ -168,7 +168,7 @@ export default {
   color: rgb(47, 170, 47);
   font-size: 7em;
 }
-.about-one {
+.about-button {
   margin-left: 5px;
   position: absolute;
   left: 0;
@@ -209,5 +209,58 @@ export default {
 }
 .custom-button::after {
   background-color: yellow;
+}
+@media only screen and ( max-width: 500px ) {
+  .custom-button {
+  padding-top: 4px;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(255, 251, 251);
+  background: rgba(0, 0, 0, 0.1);
+  width: 75px;
+  height: 30px;
+  border: 1px solid grey;
+  border-style: double;
+  transition: all .3s ease-in
+}
+.about-button {
+  margin-left: 5px;
+  position: absolute;
+  left: 0;
+  top: 1%;
+}
+.children-button {
+  margin-left: 5px;
+  position: absolute;
+  left: 0;
+  top: 94%;
+}
+.more-button {
+  margin-right: 5px;
+  position: absolute;
+  right: 0;
+  top: 1%;
+}
+.schedule-button {
+  margin-right: 5px;
+  position: absolute;
+  right: 0;
+  top: 94%;
+}
+.green-tree {
+  color: rgb(47, 170, 47);
+  padding-top: 20px;
+  font-size: 5em;
+}
+.center {
+    position: absolute;
+    color: white;
+    width: 400px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -200px;
+}
 }
 </style>
