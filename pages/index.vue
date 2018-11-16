@@ -3,7 +3,7 @@
     <div class="green-tree text-center" v-if="showButtons">
       <span>Green Tree</span>
     </div>
-    <div class="center text-center">
+    <div class="center text-center" v-if="showButtons">
       <h1> {{quotes[0].quote}} </h1>
     </div>
     <transition 
@@ -261,6 +261,14 @@ export default {
     left: 50%;
     margin-top: -50px;
     margin-left: -200px;
+}
+.about-content {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  margin-left: -45%; /* margin is -0.5 * dimension */
+  margin-top: -35%;
 }
 }
 </style>
