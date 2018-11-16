@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <div class="green-tree text-center">
+    <div class="green-tree text-center" v-if="showButtons">
       <span>Green Tree</span>
     </div>
     <div class="center text-center">
@@ -132,6 +132,7 @@ export default {
 
 <style scoped>
 .home-page {
+  font-family: 'Oxygen', sans-serif;
   overflow: hidden;
   width: 100%;
   position: absolute;
@@ -141,7 +142,8 @@ export default {
   height: auto;
   background-image: url("~assets/background.jpg");
   background-size: cover;
-  border: solid gray 15px;
+  border: solid rgb(56, 55, 55) 25px;
+  
 }
 .about-content {
   position: absolute;
@@ -163,47 +165,49 @@ export default {
 }
 
 .green-tree {
-  color: rgb(9, 88, 9);
+  color: rgb(47, 170, 47);
   font-size: 7em;
 }
 .about-one {
-  margin-left: 20px;
+  margin-left: 5px;
   position: absolute;
   left: 0;
   top: 20%;
 }
 .children-button {
-  margin-left: 20px;
+  margin-left: 5px;
   position: absolute;
   left: 0;
   top: 70%;
 }
 .more-button {
-  margin-right: 20px;
+  margin-right: 5px;
   position: absolute;
   right: 0;
   top: 20%;
 }
 .schedule-button {
-  margin-right: 20px;
+  margin-right: 5px;
   position: absolute;
   right: 0;
   top: 70%;
 }
 .custom-button {
-  border-radius: 5px;
+  padding-top: 4px;
   font-size: 2em;
-  opacity: 0.4;
   text-align: center;
-  color: white;
-  background: black;
+  color: rgb(255, 251, 251);
+  background: rgba(0, 0, 0, 0.1);
   width: 200px;
   height: 60px;
-  border: 4px solid grey;
+  border: 1px solid grey;
+  border-style: double;
   transition: all .3s ease-in
 }
 .custom-button:hover {
-  opacity: 1;
-  background-color: rgb(90, 25, 1);
+  text-decoration: underline;
+}
+.custom-button::after {
+  background-color: yellow;
 }
 </style>
