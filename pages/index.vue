@@ -153,13 +153,14 @@ export default {
   margin-top: -15%;
 }
 .center {
-    color: white;
-    /* width: 600px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -300px; */
+  position: absolute;
+  color: white;
+  width: 600px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -300px;
 }
 
 .green-tree {
@@ -223,13 +224,13 @@ export default {
     border: solid rgb(56, 55, 55) 10px;
   }
   .custom-button {
-    padding-top: 4px;
+    padding-top: 5px;
     font-size: 1em;
     text-align: center;
     color: rgb(255, 251, 251);
     background: rgba(0, 0, 0, 0.1);
-    width: 75px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     border: 1px solid grey;
     border-style: double;
     transition: all .3s ease-in
@@ -238,41 +239,39 @@ export default {
     margin-left: 5px;
     position: absolute;
     left: 0;
-    top: 1%;
+    top: 20%;
   }
   .children-button {
     margin-left: 5px;
     position: absolute;
     left: 0;
-    top: 94%;
+    top: 75%;
   }
   .more-button {
     margin-right: 5px;
     position: absolute;
     right: 0;
-    top: 1%;
+    top: 20%;
   }
   .schedule-button {
     margin-right: 5px;
     position: absolute;
     right: 0;
-    top: 94%;
+    top: 75%;
   }
   .green-tree {
     color: rgb(47, 170, 47);
-    padding-top: 20px;
-    font-size: 4em;
+    top: 20px;
+    font-size: 3.5em;
   }
   .center {
-      /* position: absolute; */
-      margin-top:25vh;
-      color: white;
-      /* width: 400px;
-      height: 100px;
-      top: 50%;
-      left: 50%;
-      margin-top: -50px;
-      margin-left: -200px; */
+    display: inline-block;
+    overflow-wrap: normal;
+    position: absolute; 
+    color: white;
+    max-width: 90vw;
+    left: 50%;
+    margin-left: -45vw;  
   }
   .about-content {
     position: absolute;
