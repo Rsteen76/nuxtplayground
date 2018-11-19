@@ -41,9 +41,9 @@
           img-alt="Image" 
           img-top 
           tag="article"
-          class="mb-2">
+          class="mb-2 scroll">
           <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+            Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content.  Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
           <b-button @click="showChildren=!showChildren, showButtons=!showButtons" variant="primary">Go somewhere</b-button>
         </b-card>
@@ -147,10 +147,11 @@ export default {
 .about-content {
   position: absolute;
   width: 50%;
+  height: 80%;
   top: 50%;
   left: 50%;
   margin-left: -25%; /* margin is -0.5 * dimension */
-  margin-top: -15%;
+  margin-top: -22%; 
 }
 .center {
   position: absolute;
@@ -200,7 +201,7 @@ export default {
   width: 200px;
   height: 60px;
   border: 1px solid grey;
-  border-style: double;
+  border-style: dashed;
   transition: all .3s ease-in
 }
 .custom-button:hover {
@@ -209,7 +210,11 @@ export default {
 .custom-button::after {
   background-color: yellow;
 }
-@media only screen and ( max-width: 500px ) {
+.scroll {
+  max-height: 90%;
+    overflow-y: auto;
+}
+@media only screen and ( max-width: 550px ) {
   .home-page {
     font-family: 'Oxygen', sans-serif;
     overflow: hidden;
@@ -262,11 +267,9 @@ export default {
   .green-tree {
     color: rgb(47, 170, 47);
     top: 20px;
-    font-size: 3.5em;
+    font-size: 3.75em;
   }
   .center {
-    display: inline-block;
-    overflow-wrap: normal;
     position: absolute; 
     color: white;
     max-width: 90vw;
@@ -276,10 +279,21 @@ export default {
   .about-content {
     position: absolute;
     width: 90%;
+    height: 90%;
     top: 50%;
     left: 50%;
     margin-left: -45%; /* margin is -0.5 * dimension */
-    margin-top: -50%;
+    margin-top: -55%;
+  }
+  .scroll {
+    max-height: 350px;
+    overflow-y: auto;
+}
+}
+@media only screen and ( max-width: 1330px ) and (min-width: 551px) {
+  .green-tree {
+    line-height: 1;
+    font-size: 6em;
   }
 }
 </style>
