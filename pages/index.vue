@@ -1,16 +1,12 @@
 <template>
   <div class="home-page">
-    <div class="green-tree text-center" v-if="showButtons">
-      <span>Green Tree</span>
-    </div>
-    <div class="center text-center" v-if="showButtons">
-      <h1> {{quotes[0].quote}} </h1>
-    </div>
+    <img src="~/assets/GreenTreeLogo.png" class="center text-center" v-if="showButtons"/>
     <transition 
       name="custom-classes-transition" 
       enter-active-class="animated fadeInLeft" 
       leave-active-class="animated fadeOutLeft">
-      <div @click="show=!show, showButtons=!showButtons" v-if="showButtons"  class="about-button custom-button">About</div>
+      // Home Button
+      <img src="~assets/ButtonHome.png" @click="show=!show, showButtons=!showButtons" v-if="showButtons"  class="about-button custom-button"/>
     </transition>
     <transition 
       name="custom-classes-transition" 
@@ -28,7 +24,7 @@
       name="custom-classes-transition" 
       enter-active-class="animated fadeInLeft" 
       leave-active-class="animated fadeOutLeft">
-      <div @click="showChildren=!showChildren, showButtons=!showButtons" v-if="showButtons" class="custom-button children-button">Children</div>
+      <img src="~assets/ButtonKids.png" @click="showChildren=!showChildren, showButtons=!showButtons" v-if="showButtons" class="custom-button children-button"/>
     </transition>
     <transition 
       name="custom-classes-transition" 
@@ -53,7 +49,7 @@
       name="custom-classes-transition" 
       enter-active-class="animated fadeInRight" 
       leave-active-class="animated fadeOutRight">
-      <div @click="showThree=!showThree, showButtons=!showButtons" v-if="showButtons" class="custom-button more-button">More</div>
+      <img src="~/assets/ButtonInfo.png" @click="showThree=!showThree, showButtons=!showButtons" v-if="showButtons" class="custom-button more-button"/>
     </transition>
     <transition 
       name="custom-classes-transition" 
@@ -78,7 +74,7 @@
       name="custom-classes-transition" 
       enter-active-class="animated fadeInRight" 
       leave-active-class="animated fadeOutRight">
-      <div @click="showSchedule=!showSchedule, showButtons=!showButtons" v-if="showButtons" class="custom-button schedule-button">Schedule</div>
+      <img src="~assets/ButtonCalendar.png" @click="showSchedule=!showSchedule, showButtons=!showButtons" v-if="showButtons" class="custom-button schedule-button"/>
     </transition>
     <transition 
       name="custom-classes-transition" 
@@ -140,9 +136,8 @@ export default {
   bottom: 0px;
   left: 0;
   height: auto;
-  background-image: url("~assets/background.jpg");
+  background-image: url("~assets/GreenTreeBG.jpg");
   background-size: cover;
-  border: solid rgb(56, 55, 55) 25px;
 }
 .about-content {
   position: absolute;
@@ -154,14 +149,13 @@ export default {
   margin-top: -22%; 
 }
 .center {
-  position: absolute;
-  color: white;
-  width: 600px;
-  height: 100px;
+  position: relative;
   top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -300px;
+  transform: translateY(-60%);
+  display: block;
+  margin: auto;
+  width: 20%;
+  min-width: 300px;
 }
 
 .green-tree {
@@ -169,40 +163,40 @@ export default {
   font-size: 7em;
 }
 .about-button {
-  margin-left: 5px;
+  margin-left: 0px;
   position: absolute;
   left: 0;
-  top: 20%;
+  top: 0;
 }
 .children-button {
-  margin-left: 5px;
+  margin-left: 0px;
+  margin-bottom: 0;
   position: absolute;
   left: 0;
-  top: 70%;
+  bottom: 0;
 }
 .more-button {
-  margin-right: 5px;
+  margin-right: 0px;
   position: absolute;
   right: 0;
-  top: 20%;
+  top: 0;
 }
 .schedule-button {
-  margin-right: 5px;
+  margin-right: 0px;
   position: absolute;
   right: 0;
-  top: 70%;
+  bottom: 0;
 }
 .custom-button {
-  padding-top: 4px;
+  padding-top: 0px;
   font-size: 2em;
   text-align: center;
   color: rgb(255, 251, 251);
-  background: rgba(0, 0, 0, 0.1);
-  width: 200px;
-  height: 60px;
-  border: 1px solid grey;
-  border-style: dashed;
-  transition: all .3s ease-in
+  width: 15%;
+  max-width: 150px;
+  height: auto;
+  transition: all .3s ease-in;
+  z-index: 1
 }
 .custom-button:hover {
   text-decoration: underline;
@@ -214,68 +208,26 @@ export default {
   max-height: 90%;
     overflow-y: auto;
 }
-@media only screen and ( max-width: 550px ) {
-  .home-page {
-    font-family: 'Oxygen', sans-serif;
-    overflow: hidden;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0;
-    height: auto;
-    background-image: url("~assets/background.jpg");
-    background-size: cover;
-    border: solid rgb(56, 55, 55) 10px;
-  }
+@media only screen and ( max-width: 800px ) {
   .custom-button {
-    padding-top: 5px;
-    font-size: 1em;
-    text-align: center;
-    color: rgb(255, 251, 251);
-    background: rgba(0, 0, 0, 0.1);
-    width: 100px;
-    height: 40px;
-    border: 1px solid grey;
-    border-style: double;
+    min-width:30%;
     transition: all .3s ease-in
   }
-  .about-button {
-    margin-left: 5px;
-    position: absolute;
-    left: 0;
-    top: 20%;
-  }
-  .children-button {
-    margin-left: 5px;
-    position: absolute;
-    left: 0;
-    top: 75%;
-  }
-  .more-button {
-    margin-right: 5px;
-    position: absolute;
-    right: 0;
-    top: 20%;
-  }
-  .schedule-button {
-    margin-right: 5px;
-    position: absolute;
-    right: 0;
-    top: 75%;
-  }
+  
   .green-tree {
     color: rgb(47, 170, 47);
-    top: 20px;
+    top: 30px;
     font-size: 3.75em;
   }
-  .center {
-    position: absolute; 
-    color: white;
-    max-width: 90vw;
-    left: 50%;
-    margin-left: -45vw;  
-  }
+.center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+  display: block;
+  margin: auto;
+  width: 40%;
+  min-width: 300px;
+}
   .about-content {
     position: absolute;
     width: 90%;
@@ -290,10 +242,5 @@ export default {
     overflow-y: auto;
 }
 }
-@media only screen and ( max-width: 1330px ) and (min-width: 551px) {
-  .green-tree {
-    line-height: 1;
-    font-size: 6em;
-  }
-}
+
 </style>
